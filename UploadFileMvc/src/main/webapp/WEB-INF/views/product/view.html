@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrapper">
+    <h3>Product Detail</h3>
+    <a th:href="@{/}">Back to list</a>
+    <div id="content">
+        <div id="detail">
+            <div class="cusdetail">
+                <img th:src="@{'/images/'+${product.getAvatar()}}" alt="">
+            </div>
+            <div class="cusdetail">
+                <label>Name:</label>
+                <label th:text="${product.getName()}"></label>
+            </div>
+            <div class="cusdetail">
+                <label>Price:</label>
+                <label th:text="${product.getPrice()}"></label>
+            </div>
+            <div class="cusdetail">
+                <label>Description:</label>
+                <label th:text="${product.getDescription()}"></label>
+            </div>
+            <div class="cusdetail">
+                <label>Producer:</label>
+                <label th:text="${product.getProducer()}"></label>
+            </div>
+            <div class="cusdetail">
+                <label>Status:</label>
+                <label th:text="${product.getStatus()}"></label>
+            </div>
+
+        </div>
+    </div>
+    <footer th:replace="layout :: footer"></footer>
+</div>
+</body>
+</html>

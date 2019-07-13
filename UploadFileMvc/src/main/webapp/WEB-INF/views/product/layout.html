@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Manager</title>
+    <style>
+        #wrapper{
+            width: 960px;
+            background: #dddddd;
+            font-size: 16px;
+            margin-left: 150px;
+        }
+        #content{
+            min-height: 500px;
+            text-align: center;
+        }
+        h3{background-color: blue; color: white; padding: 10px 0 10px 20px;}
+        footer{
+            margin: 10px 0;
+            text-align: center;
+            background: blue;
+            color:#f2f2f2;
+            padding: 10px 0;
+        }
+
+        #product {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #product td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #product tr:nth-child(even){background-color: #f2f2f2;}
+
+        #product tr:hover {background-color: #ddd;}
+
+        #product th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type=text],input[type=email]{
+            width: 100%;
+            padding: 12px 0;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 200px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        #form {
+            width: 500px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-left: 200px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        #detail{
+            background-color: #f2f2f2;
+            width: 500px;
+            margin-left: 200px;
+        }
+
+        .notify span{font-size: 15px; color: blue;}
+    </style>
+</head>
+<body>
+
+<footer th:fragment="footer">
+    &copy; 2018 CodeGym
+</footer>
+
+</body>
+</html>

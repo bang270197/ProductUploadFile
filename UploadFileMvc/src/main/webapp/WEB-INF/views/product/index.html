@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrapper">
+    <h3>Product</h3>
+    <div id="content">
+        <p>
+            <a th:href="@{/product/create}">
+                Add new product
+            </a>
+        </p>
+        <div class="notify">
+            <div th:if="${success}">
+                <span th:text="${success}"></span>
+            </div>
+        </div>
+        <table id = "product">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Producer</th>
+                <th>Status</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row,rowStat : ${products}">
+                <td th:text="${row.getName()}"></td>
+                <td th:text="${row.getPrice()}"></td>
+                <td th:text="${row.getDescription()}"></td>
+                <td th:text="${row.getProducer()}"></td>
+                <td th:text="${row.getStatus()}"></td>
+                <td><img th:src="@{'/images/'+${row.getAvatar()}}" alt=""></td>
+                <td><a th:href="@{/product/{id}/edit(id=${row.getId()})}">edit</a></td>
+                <td><a th:href="@{/product/{id}/delete(id=${row.getId()})}">delete</a></td>
+                <td><a th:href="@{/product/{id}/view(id=${row.getId()})}">view</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <div id="form">
+            <form th:action="@{/product/search}" method="get" novalidate="novalidate">
+                <input type="text"  th:name="name" placeholder="input name...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
+    <footer th:replace="layout :: footer"></footer>
+</div>
+</body>
+</html>

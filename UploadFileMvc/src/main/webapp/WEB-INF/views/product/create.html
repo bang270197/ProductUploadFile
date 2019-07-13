@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrapper">
+    <h3>Create Product</h3>
+    <p>
+        <a th:href="@{/}">Back to list</a>
+    </p>
+
+    <div id="content">
+        <div id="form">
+            <form  th:action="@{/product/save}" th:object="${product}"
+                   method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                <input type="hidden" th:field="*{id}"/>
+                <div>
+                    <label>Name</label>
+                    <input type="text" th:field="*{name}"/>
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="email" th:field="*{price}"/>
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" th:field="*{description}"/>
+                </div>
+                <div>
+                    <label>Producer</label>
+                    <input type="text" th:field="*{producer}"/>
+                </div>
+                <div>
+                    <label>Status</label>
+                    <input type="text" th:field="*{status}"/>
+                </div>
+                <div>
+                    <label>Image</label>
+                    <input type="file" th:field="*{images}">
+                </div>
+                <input type="submit" value="Save">
+            </form>
+        </div>
+    </div>
+    <footer th:replace="layout :: footer"></footer>
+</div>
+</body>
+</html>
